@@ -37,4 +37,9 @@ if [[ -f $WATSON_AUTOCOMPLETE ]]; then
   ln -sfv $WATSON_AUTOCOMPLETE "$ZSH_SITE_FUNCTIONS/_watson"
 fi
 
-"${CURRDIR}/golang-zsh-completion"
+TIMETRAP_AUTOCOMPLETE=$(echo $HOMEBREW_PREFIX/lib/ruby/gems/*/gems/timetrap*/completions/zsh/_t | tr ' ' '\n' | head -n 1)
+if [[ -f $TIMETRAP_AUTOCOMPLETE ]]; then
+  ln -sfv $TIMETRAP_AUTOCOMPLETE "${ZSH_SITE_FUNCTIONS}/_t"
+fi
+
+"$CURRDIR/golang-zsh-completion"

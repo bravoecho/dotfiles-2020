@@ -73,6 +73,22 @@ RUBY_BIN="$HOMEBREW_PREFIX/opt/ruby/bin"
 
 PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
+# -------------- #
+# --- WATSON --- #
+# -------------- #
+
+# Watson timetracker.
+#
+# Use the common config instead of the macOS specific one (~/Library).
+export WATSON_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/watson"
+
+# ---------------- #
+# --- TIMETRAP --- #
+# ---------------- #
+
+# another timetracker
+export SHEET_FILE="$HOME/.config/tt/time-entries.json"
+
 # --------------------- #
 # --- Output stream --- #
 # --------------------- #
