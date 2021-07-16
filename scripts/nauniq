@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
 # remove duplicates from a list, without sorting
-awk '!seen[\$0]++'
+awk '!seen[\$0]++' < "${1:-/dev/stdin}"
