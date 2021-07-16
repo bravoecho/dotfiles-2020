@@ -43785,6 +43785,11 @@
 	<integer>5</integer>
 	<key>ThreeFingerEmulates</key>
 	<true/>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Actions</string>
+	</array>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>ViewManPageCommand</key>
