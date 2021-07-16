@@ -1022,6 +1022,12 @@ if executable('xmllint')
   autocmd FileType xml command! -nargs=0 Format execute ':%! xmllint --format --nowarning -'
 endif
 
+"--- Autoformat HTML with tidy ---"
+
+if executable('tidy')
+  autocmd FileType html command! -nargs=0 Format execute ':%! tidy -'
+endif
+
 " ---------------- "
 " --- vim-ruby --- "
 " ---------------- "
