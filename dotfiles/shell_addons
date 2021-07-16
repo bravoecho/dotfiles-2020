@@ -60,11 +60,12 @@ export DELTA_PAGER='less --clear-screen'
 # fi
 
 # ------------ #
-# --- Ruby --- #
+# --- RUBY --- #
 # ------------ #
 
 # Use Brew-installed Ruby if available.
-[[ -d "$HOMEBREW_PREFIX/opt/ruby" ]] && PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+RUBY_BIN="$HOMEBREW_PREFIX/opt/ruby/bin"
+[[ -d $RUBY_BIN ]] && PATH="$RUBY_BIN:$(echo $HOMEBREW_PREFIX/lib/ruby/gems/*/bin):$PATH"
 
 # -------------- #
 # --- Golang --- #
