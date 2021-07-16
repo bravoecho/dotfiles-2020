@@ -28,10 +28,9 @@ mkdir -p "$HOME/.config"
 backup_and_symlink "${DOTFILES_DIR}/gitconfig_addons" "${HOME}/.gitconfig_addons"
 backup_and_symlink "${DOTFILES_DIR}/gitignore_global" "${HOME}/.gitignore_global"
 
-git config --global include.path .gitconfig_addons
-# for some reason the global excludesfile requires an absolute path, so we do
-# not place it in the addons, but, with this command, directly in the main
-# local .gitconfig
+# Some settings require the full path of the referenced file, so we need to set
+# them globally (in '~/.gitconfig')
+git config --global include.path ~/.gitconfig_addons
 git config --global core.excludesfile ~/.gitignore_global
 
 # ------------ #
@@ -69,7 +68,6 @@ backup_and_symlink "$DOTFILES_DIR/tigrc" "$HOME/.tigrc"
 backup_and_symlink "$DOTFILES_DIR/bat_config" "$LOCAL_CONFIG/bat/config"
 backup_and_symlink "$DOTFILES_DIR/direnvrc" "$HOME/.direnvrc"
 backup_and_symlink "$DOTFILES_DIR/curlrc" "$HOME/.curlrc"
-backup_and_symlink "$DOTFILES_DIR/envrc" "$HOME/.envrc"
 # this requires the gotop command to be aliases, because it does not respect
 # the XDG_CONFIG_HOME convention, and it will not automatically load the
 # configuration from this custom location
