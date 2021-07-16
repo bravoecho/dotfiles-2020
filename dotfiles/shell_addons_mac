@@ -1,6 +1,19 @@
 # vim: set ft=bash:
 
-# PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/bin:$PATH"
+# ------------ #
+# --- RUBY --- #
+# ------------ #
+
+# export PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/bin:$PATH"
+# export LDFLAGS="-L$HOMEBREW_PREFIX/opt/openssl@1.1/lib"
+# export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/opt/openssl@1.1/lib/pkgconfig"
+# export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/openssl@1.1/include"
+
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
+
+# ------------ #
+# --- PATH --- #
+# ------------ #
 
 PATH="$(echo $HOMEBREW_PREFIX/opt/*/libexec/gnubin | tr ' ' :):$PATH"
 
@@ -12,10 +25,8 @@ PATH="$HOMEBREW_PREFIX/opt/lsof/bin:$PATH"
 PATH="$HOMEBREW_PREFIX/opt/sqlite/bin:$PATH"
 PATH="$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH"
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
-
 #---------------#
-#--- ncurses ---#
+#--- NCURSES ---#
 #---------------#
 
 # brew setup to override the default, outdated ncurses that comes with macOS
