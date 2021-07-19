@@ -8,13 +8,13 @@ echo "[setup] Installing iTerm2 utilities"
 function iterm2_util () {
   local util=$1
   local dest="${HOME}/.local/bin/${util}"
-  local url="https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/utilities/${util}"
+  local url="https://iterm2.com/utilities/${util}"
 
+  # --time-cond "${dest}" \ fetching only if more recent doesn't work due to unexpected headers
   curl \
     "${url}" \
     --location \
     --create-dirs \
-    --time-cond "${dest}" \
     --output "${dest}"
 
   chmod u+x "$dest"
